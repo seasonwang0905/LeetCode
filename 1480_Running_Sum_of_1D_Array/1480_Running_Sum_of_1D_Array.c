@@ -10,7 +10,7 @@ int* runningSum(int* nums, int numsSize, int* returnSize) {
 }
 
 int main() {
-    // Example 1
+    // Example
     int input[4] = {1, 2, 3, 4};
     size_t length = sizeof(input) / sizeof(input[0]);
 
@@ -23,15 +23,20 @@ int main() {
     
     for(int i = 0; i < length; i++) dynamicArr[i] = input[i];
 
+    // returnSize is actually no use here.
     int returnSize;
     int *result = runningSum(dynamicArr, length, &returnSize);
 
-    printf("Example 1: ");
+    printf("Example: ");
+    for(int i = 0; i < length; i++) {
+        printf("%d ", input[i]);
+    }
+    printf("\n");
+    printf("Result: ");
     for(int i = 0; i < length; i++) {
         printf("%d ", result[i]);
     }
-    printf("\n");
-  
+
     free(dynamicArr);
 
     return 0;
